@@ -1,7 +1,9 @@
 # memo app
 
 ## use
-node.js, 
+JavaScript(node.js), 
+Express, 
+Handlebars.js, 
 MySQL, 
 VScode, 
 Docker
