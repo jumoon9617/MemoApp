@@ -1,0 +1,37 @@
+<form action="/" method="post">
+    <input type="text" name="data" placeholder="データを入力してください">
+    <button type="submit">送信</button>
+</form>
+
+<div>
+    <p>以下に保存されたテキストを表示します。</p>
+    <hr>
+    {{#each rows}}
+    <div id="contents">
+        <input type="checkbox", name="delete[]", value="{{this.name}}">
+        <!-- <p>ファイル名：{{this.title}}</p> -->
+        <p>内容：{{this.content}}</p>
+        <hr>
+    </div>
+    {{/each}}
+</div>
+
+<!-- アップロードフォーム -->
+<form action="/" method="post">
+    <input type="hidden" name="action" value="upload">
+    <input type="text" name="data" placeholder="データを入力してください">
+    <button type="submit">送信</button>
+</form>
+
+<!-- 削除フォーム -->
+<form action="/" method="post">
+    <input type="hidden" name="action" value="delete">
+    {{#each files}}
+        <div>
+            <input type="checkbox" name="delete[]" value="{{this.name}}">
+            <p>ファイル名：{{this.name}}</p>
+            <p>内容：{{this.content}}</p>
+        </div>
+    {{/each}}
+    <button type="submit">削除</button>
+</form>
